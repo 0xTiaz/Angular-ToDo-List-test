@@ -5,6 +5,7 @@ import { FormsModule, NgForm } from '@angular/forms';
 export interface TodoItem {
   id: number;
   task: string;
+  desc: string;
   completed: boolean;
 }
 
@@ -26,12 +27,14 @@ import {
 export class TodoList {
   todoList: TodoItem[] = [];
   newTask: string = '';
+  newDesc: string = '';
 
   addTask(): void {
-    if (this.newTask.trim() !== '') {
+    if (this.newTask.trim() !== '' && this.newDesc.trim() !== '') {
       const newTodoItem: TodoItem = {
         id: Date.now(),
         task: this.newTask,
+        desc: this.newDesc,
         completed: false,
       };
 

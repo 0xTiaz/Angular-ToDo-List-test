@@ -1,8 +1,14 @@
-<div class="max-w-6xl w-xl p-10 rounded-xl shadow-xl bg-white">
+<div class="w-6xl p-10 rounded-xl shadow-xl bg-white">
   <div class="space-x-4 flex w-full justify-between">
     <input
       [(ngModel)]="newTask"
-      placeholder="Ingresa una nueva tarea"
+      placeholder="Titulo"
+      type="text"
+      class="border border-orange-500 px-2 w-[90%] py-2 rounded-lg"
+    />
+    <input
+      [(ngModel)]="newDesc"
+      placeholder="Descripcion"
       type="text"
       class="border border-orange-500 px-2 w-[90%] py-2 rounded-lg"
     />
@@ -14,32 +20,44 @@
     </button>
   </div>
 
-  <ul class="py-6 px-2">
+  <ul class="w-full flex py-6 px-2">
     <li
-      class="py-2 flex justify-between items-center border border-none border-b-black/30"
+      class="py-2 flex w-full justify-between items-center border border-none border-b-black/30"
       *ngFor="let todoItem of todoList; let i = index"
     >
-      <div class="space-x-4 text-md flex items-center">
+      <div class="space-x-4 text-md flex items-center w-full">
         <input type="checkbox" class="" (change)="toggleCompleted(i)" />
-        <span
-          [ngStyle]="
-            todoItem.completed
-              ? { 'text-decoration': 'line-through', color: 'gray' }
-              : {}
-          "
-        >
-          {{ todoItem.task }}
-        </span>
+        <div class="w-full">
+          <span
+            [ngStyle]="
+              todoItem.completed
+                ? { 'text-decoration': 'line-through', color: 'gray' }
+                : {}
+            "
+            class="text-2xl font-bold"
+          >
+            {{ todoItem.task }}
+          </span>
+          <p
+            [ngStyle]="
+              todoItem.completed
+                ? { 'text-decoration': 'line-through', color: 'gray' }
+                : {}
+            "
+          >
+            {{ todoItem.desc }}
+          </p>
+        </div>
         <span [ngStyle]="todoItem.completed ? { color: 'green' } : {}">
           {{ todoItem.completed ? "Completada" : "Pendiente" }}
         </span>
+        <button
+          (click)="deleteTask(todoItem.id)"
+          class="py-2 px-4 bg-red-500/50 hover:bg-red-500 hover:text-white rounded-lg flex items-center"
+        >
+          Remove
+        </button>
       </div>
-      <button
-        (click)="deleteTask(todoItem.id)"
-        class="py-2 px-4 bg-red-500/50 hover:bg-red-500 hover:text-white rounded-lg flex items-center"
-      >
-        Remove
-      </button>
     </li>
   </ul>
 </div>
