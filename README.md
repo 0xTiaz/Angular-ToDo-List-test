@@ -1,59 +1,25 @@
-# TaskAngularApp
+En este repositorio reside "Prueba Tecnica - Desarrollador Front End"
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.1.3.
+Datos a considerar:
 
-## Development server
+- Se utilizo una interfaz para agregar y mostrar tareas ingresadas.
 
-To start a local development server, run:
+- Utilice un componente "./src/app/components/todo-list, este componente se utilizo en app.ts
+  contiene el desarrollo, estilos, objetos y props.
 
-```bash
-ng serve
-```
+- Para el estilo del sitio, se utilizo TailWindCSS, instalado con - npm install tailwindcss @tailwindcss/postcss postcss --force -
+  Para lograr que esta libreria funcione, se debio agregar ".postcssrc.json" logrando inicializar la libreria, luego en "styles.css"
+  se importa mediante - @import "tailwindcss" -
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+- En cuanto al proceso de "build" se utiliza - ng build - generando la carpeta .dist/
 
-## Code scaffolding
+- En "https://github.com/0xTiaz/Angular-ToDo-List-test" se puede visualizar - .github/workflows - creado por Azure, configurando el paso a produccion.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+- En Azure a traves de Static Web Apps se logra el "paso a produccion" a traves del repo antes mencionado.
 
-```bash
-ng generate component component-name
-```
+- En su configuracion, se le indica la ruta "dist/task-angular-app/browser/index.html"
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+- Una vez que la carpeta se crea mediante Azure, se inicializa el workflow azure-static-web-apps-mango-flower-0b440e81e.yml, finalizando el proceso, podremos ver
+  el proyecto en produccion con la direccion https://mango-flower-0b440e81e.1.azurestaticapps.net/
 
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+- Agradeciendo el tiempo invertido en mi postulacion, estare atento a nuevas noticias sobre este proceso, Saludos y bonita semana.
